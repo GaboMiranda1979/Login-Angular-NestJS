@@ -43,7 +43,7 @@ export class UserRegisterComponent implements OnInit {
     const email = this.userRegister.value.email;
     const password = this.userRegister.value.password;
     const repeatPassword = this.userRegister.value.repeatPassword;
-    const user : User = (this.userRegister.value.name, this.userRegister.value.email, this.userRegister.value.password);
+    const user : User = {name, email, password};
 
     if (password !== repeatPassword) {
       this.toastr.error('Password must be equals', 'Error');
