@@ -22,7 +22,7 @@ getUser(id: string): Observable<User>{
 }
 
   registerUser(user: User): Observable<User>{
-    return this.http.post<User>( `${this.BASE_URL}/auth/register`, user);
+    return this.http.post<User>(`${this.BASE_URL}/auth/register`, user);
   }
 
 }
