@@ -3,7 +3,7 @@
     <img class="logo" src="../../../assets/img/login2.png" alt="Login" />
     <h2>Gabo's Web</h2>
     <h1>Login</h1>
-    <form (ngSubmit)="login()" [formGroup]="userLogin">
+    <form (ngSubmit)="login()" [formGroup]="userLoginForm">
       <div class="form-floating mb-3">
         <input
           type="email"
@@ -14,8 +14,8 @@
         <label>Email address</label>
         <span
           *ngIf="
-            userLogin.get('email')?.hasError('required') &&
-            userLogin.get('email')?.touched
+            userLoginForm.get('email')?.hasError('required') &&
+            userLoginForm.get('email')?.touched
           "
           class="text-danger errorLabel"
         >
@@ -23,8 +23,8 @@
         </span>
         <span
           *ngIf="
-            userLogin.get('email')?.hasError('email') &&
-            userLogin.get('email')?.touched
+            userLoginForm.get('email')?.hasError('email') &&
+            userLoginForm.get('email')?.touched
           "
           class="text-danger errorLabel"
         >
@@ -41,8 +41,8 @@
         <label>Password</label>
         <span
           *ngIf="
-            userLogin.get('password')?.hasError('required') &&
-            userLogin.get('password')?.touched
+            userLoginForm.get('password')?.hasError('required') &&
+            userLoginForm.get('password')?.touched
           "
           class="text-danger errorLabel"
         >
@@ -53,7 +53,7 @@
         <button
           class="btn btn-secondary btn-lg"
           type="submit"
-          [disabled]="userLogin.invalid"
+          [disabled]="userLoginForm.invalid"
         >
           Login
         </button>
